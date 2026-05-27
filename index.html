@@ -268,6 +268,19 @@ hr.rule{border:none;height:1px;margin:2.6rem 0;
 .gate p{color:var(--ink-soft);font-size:.95rem;margin-top:.35rem}
 .tape{font-family:"Cinzel";font-weight:700;letter-spacing:.04em;color:var(--ember)}
 
+/* framed screenshot card */
+figure.shot{margin:0;border-radius:14px;overflow:hidden;background:#fff7;
+  border:1px solid var(--parch-edge);box-shadow:0 14px 30px -22px oklch(0.3 0.04 150 / .6)}
+figure.shot img{width:100%;display:block}
+figure.shot figcaption{font-family:"Cinzel";font-size:.78rem;letter-spacing:.04em;
+  color:var(--ink-soft);padding:.7rem .9rem;background:linear-gradient(180deg,#fff8,var(--parch-2))}
+
+/* formation gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}}
+.gallery figure.shot{margin:0}
+
 /* ============ §3 THE RULE (dark drama) ============ */
 .rule-band{position:relative;color:var(--parch);overflow:hidden;isolation:isolate;
   background:
@@ -570,68 +583,33 @@ body > .skiptranslate{display:none !important}
   </div>
 </section>
 
-<!-- ============ §2 FUNDAMENTALS ============ -->
-<section class="sheet alt band" id="fundamentals">
+<!-- ============ §2 THE SKILL ============ -->
+<section class="sheet alt band" id="skill">
   <div class="wrap">
     <div class="eyebrow" data-rv>Chapter II</div>
     <div class="chapter" data-rv>
       <span class="no">02</span>
-      <h2>How the forge works</h2>
-      <p class="sub">Three materials do the heavy lifting, and two gates decide when your gear can level up at all.</p>
+      <h2>The only skill that matters</h2>
+      <p class="sub">As a joiner, exactly one number on your hero counts. Everything else is noise.</p>
     </div>
-
-    <div class="split">
-      <div data-rv>
-        <div class="deflist">
-          <div class="row">
-            <img class="ico" src="assets/ic-forgehammer.png" alt="">
-            <div><h4>Forge-Hammers</h4><p>Each upgrade boosts a gear piece's stats by <strong>+10%</strong>. They're your raw lifting power.</p></div>
-          </div>
-          <div class="row">
-            <img class="ico" src="assets/ic-xp-enhancement.png" alt="">
-            <div><h4>XP Components</h4><p>Used to level hero gear. They come in <strong>10 XP</strong> and <strong>100 XP</strong> denominations.</p></div>
-          </div>
-          <div class="row">
-            <img class="ico" src="assets/ic-mythic-chest.png" alt="">
-            <div><h4>Hero gear as fuel</h4><p>Common→Epic hero gear is fed into your <strong>mythic</strong> gear. Value by rarity:</p>
-              <div class="fuel">
-                <span class="chip g">Grey <b>10</b></span>
-                <span class="chip gr">Green <b>30</b></span>
-                <span class="chip bl">Blue <b>60</b></span>
-                <span class="chip pu">Purple <b>100</b></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-rv class="d1">
-        <div class="gates">
-          <div class="gate">
-            <div class="tag">Ascension <span class="req">+100 / 10</span></div>
-            <p>Unlocked at <strong>XP +100</strong> and a <strong>level-10 Forge-Hammer</strong>. Requires <span class="tape">Mythic Gear</span> to push a piece into red.</p>
-          </div>
-          <div class="gate imb">
-            <div class="tag">Imbuement <span class="req">+100 / 10</span></div>
-            <p>Same unlock - <strong>XP +100</strong> and a <strong>level-10 Forge-Hammer</strong> - but this one is fed by <span class="tape">Mithril</span>.</p>
-          </div>
-          <p class="note" style="font-size:.92rem">Both gates open at the very same threshold. Think of <strong>+100/10</strong> as the doorway to a piece's real power curve.</p>
-        </div>
-      </div>
-    </div>
-
-    <hr class="rule">
-
     <div class="split" style="align-items:center">
       <div data-rv>
-        <h3 class="cz" style="font-size:var(--fs-h3);margin-bottom:.6rem">Imbuement, plainly</h3>
-        <p class="note">You need <strong>Mithril + Mythic hero gear</strong> for every imbuement level. Mythic gear ascends a piece to <strong>red</strong>; Mithril then imbues that red into <strong>gold</strong> - at levels <strong>20, 40, 60, 80, 100</strong>.</p>
-      </div>
-      <div data-rv class="d1">
-        <div class="panel foil">
-          <p style="margin:0"><strong>One rule that saves confusion:</strong> every gear piece - chestplate, gloves, boots, helmet - carries <em>its own</em> stat upgrades. Those stay the same <strong>regardless of troop type</strong>. A helmet is a helmet, whether it sits on an archer or an infantry hero.</p>
+        <p class="lead">It is always the <strong>Expedition skill on the top-right</strong> of your joiner hero - that skill and its <strong>skill level</strong> are all the rally reads.</p>
+        <div class="gates" style="margin-top:1.4rem">
+          <div class="gate">
+            <div class="tag">Gear on joiners <span class="req">does nothing</span></div>
+            <p>Strip the gear off your joiner heroes and feed it into your three rally leaders instead. See the <a href="https://texnottexas.github.io/kingshot-gear-guide/">gear codex</a>.</p>
+          </div>
+          <div class="gate imb">
+            <div class="tag">Joiner cap <span class="req">4 max</span></div>
+            <p>Only up to <strong>four joiners</strong> contribute to the overall rally bonus.</p>
+          </div>
         </div>
       </div>
+      <figure data-rv class="d1 shot">
+        <img src="assets/shot-expedition-skill.png" alt="A joiner hero card with the top-right Expedition skill circled">
+        <figcaption>The circled skill - top-right, Expedition - is the only one that counts.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
