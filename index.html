@@ -324,6 +324,17 @@ figure.shot figcaption{font-family:"Cinzel";font-size:.78rem;letter-spacing:.04e
 .credit{margin-top:1.4rem;font-size:.82rem;color:var(--ink-faint)}
 .credit a{color:var(--gold-deep)}
 
+/* troop-priority bars */
+.tp{display:grid;gap:.7rem;margin:1.2rem 0}
+.tp .row{display:grid;grid-template-columns:7rem 1fr auto;gap:.8rem;align-items:center}
+.tp .row .lbl{font-family:"Cinzel";font-weight:700;letter-spacing:.04em}
+.tp .bar{height:16px;border-radius:999px;background:var(--parch-2);overflow:hidden;border:1px solid var(--parch-edge)}
+.tp .bar i{display:block;height:100%}
+.tp .row.arc .lbl{color:var(--arc)} .tp .row.arc .bar i{width:100%;background:var(--arc)}
+.tp .row.cav .lbl{color:var(--cav)} .tp .row.cav .bar i{width:62%;background:var(--cav)}
+.tp .row.inf .lbl{color:var(--ink-faint)} .tp .row.inf .bar i{width:6%;background:var(--ink-faint)}
+.tp .row .v{font-family:"Cinzel";font-weight:700;font-size:.82rem;color:var(--ink-soft)}
+
 /* ============ §3 THE RULE (dark drama) ============ */
 .rule-band{position:relative;color:var(--parch);overflow:hidden;isolation:isolate;
   background:
@@ -812,50 +823,53 @@ two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} �
   </div>
 </section>
 
-<!-- ============ §8 CHARMS ============ -->
-<section class="sheet band" id="charms">
+<!-- ============ §8 FORMATIONS ============ -->
+<section class="sheet band" id="formations">
   <div class="wrap">
-    <div class="eyebrow" data-rv>Chapter VII</div>
+    <div class="eyebrow" data-rv>Chapter VIII</div>
     <div class="chapter" data-rv>
-      <span class="no">07</span>
-      <h2>Charms: balance, then leap 3 → 5</h2>
-      <p class="sub">Keep charm levels balanced - with one deliberate exception that quietly saves you a stack of Charm Guides.</p>
+      <span class="no">08</span>
+      <h2>Build your formations</h2>
+      <p class="sub">Archers do the work. Infantry does almost nothing. Set your marches up to send as many archers as you can.</p>
     </div>
 
-    <div class="charm-order">
-      <div class="order whale" data-rv>
-        <div class="t">Whale / Kraken</div>
-        <div class="seq"><span class="o">Infantry</span><span class="arr">→</span><span class="o">Archer</span><span class="arr">→</span><span class="o">Cavalry</span></div>
+    <div class="tp" data-rv>
+      <div class="row arc"><span class="lbl">Archer</span><span class="bar"><i></i></span><span class="v">Most damage</span></div>
+      <div class="row cav"><span class="lbl">Cavalry</span><span class="bar"><i></i></span><span class="v">2nd most</span></div>
+      <div class="row inf"><span class="lbl">Infantry</span><span class="bar"><i></i></span><span class="v">Little to none</span></div>
+    </div>
+
+    <div class="split" style="align-items:start;margin-top:1.4rem">
+      <div data-rv>
+        <div class="panel foil">
+          <p style="margin:0"><strong>Every formation needs a different hero in the 2nd and 3rd slot.</strong> If you repeat a hero across formations, deploying one will leave another short a hero.</p>
+        </div>
       </div>
-      <div class="order f2p" data-rv class="d1">
-        <div class="t">F2P / Low-spender</div>
-        <div class="seq"><span class="o">Archer</span><span class="arr">→</span><span class="o">Cavalry</span><span class="arr">→</span><span class="o">Infantry</span></div>
+      <div data-rv class="d1">
+        <div class="spend">
+          <div class="who f2p">
+            <div class="t">Fewer troops</div>
+            <p>Make 1-2 formations of mostly cavalry + archers (<strong>0/40/60</strong> inf/cav/arc) and use them to join your alliance's strongest rally leaders.</p>
+          </div>
+          <div class="who whale">
+            <div class="t">Lots of troops</div>
+            <p>Split your archers <strong>evenly</strong> across all available marches, then fill the rest of each with cavalry.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <p class="lead" data-rv style="margin-bottom:1.2rem">Going from level 3, push <strong>straight to 5</strong> rather than nudging three charms to 4. Same +9% - fewer Guides. Here's the math:</p>
-
-    <div class="mathwrap">
-      <div class="mcard good" data-rv>
-        <div class="way">Path A · one charm 3 → 5</div>
-        <div class="steps3"><span class="p">Lv 3</span> → <span class="p">4</span> <b>(+3%)</b> → <span class="p">5</span> <b>(+6%)</b></div>
-        <div class="gain">+9% <span style="font-size:.5em;font-weight:600;font-family:Spectral;font-style:italic">Lethality &amp; Health</span></div>
-        <div class="cost">
-          <span class="ci"><img src="assets/ic-charm-designs.png" alt="">300 Designs</span>
-          <span class="ci"><img src="assets/ic-charm-guides.png" alt="">180 Guides</span>
-        </div>
-        <div class="verdict">✓ Same boost, the lean way.</div>
-      </div>
-      <div class="mcard meh" data-rv class="d1">
-        <div class="way">Path B · three charms 3 → 4</div>
-        <div class="steps3"><span class="p">3 charms</span> → each <span class="p">Lv 4</span> <b>(3 × +3%)</b></div>
-        <div class="gain">+9% <span style="font-size:.5em;font-weight:600;font-family:Spectral;font-style:italic">same total</span></div>
-        <div class="cost">
-          <span class="ci"><img src="assets/ic-charm-designs.png" alt="">300 Designs</span>
-          <span class="ci"><img src="assets/ic-charm-guides.png" alt="">240 Guides</span>
-        </div>
-        <div class="verdict">✗ Costs 60 extra Charm Guides for nothing.</div>
-      </div>
+    <h3 class="cz" data-rv style="font-size:var(--fs-h3);margin:1.8rem 0 .4rem">My formations - feel free to copy them</h3>
+    <p class="note" data-rv style="margin-bottom:1rem">Every formation has a different hero in the 2nd and 3rd slot, so deploying one never leaves another short.</p>
+    <div class="gallery" data-rv>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-1.png" alt="Bear Hunt formation 1"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-2.png" alt="Bear Hunt formation 2"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-3.png" alt="Bear Hunt formation 3"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-4.png" alt="Bear Hunt formation 4"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-5.png" alt="Bear Hunt formation 5"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-6.png" alt="Bear Hunt formation 6"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-7.png" alt="Bear Hunt formation 7"></figure>
+      <figure class="shot"><img loading="lazy" src="assets/shot-formation-8.png" alt="Bear Hunt formation 8"></figure>
     </div>
   </div>
 </section>
