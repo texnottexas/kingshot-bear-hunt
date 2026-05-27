@@ -304,6 +304,26 @@ figure.shot figcaption{font-family:"Cinzel";font-size:.78rem;letter-spacing:.04e
 .thrud{margin-top:1.4rem;border-left-color:var(--arc)}
 .thrud .t{color:oklch(0.45 0.15 145)}
 
+/* damage math */
+.dmg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.4rem 0}
+@media(max-width:680px){.dmg{grid-template-columns:1fr}}
+.dmg .c{border-radius:14px;padding:1.2rem 1.3rem;border:2px solid var(--parch-edge);background:#fff8;text-align:center}
+.dmg .c.best{border-color:var(--arc);background:linear-gradient(180deg,oklch(0.95 0.04 145),oklch(0.9 0.06 145))}
+.dmg .c .mix{font-family:"Cinzel";font-weight:700;font-size:.92rem;color:var(--ink);min-height:2.6em}
+.dmg .c .big{font-family:"Cinzel";font-weight:900;font-size:2.4rem;line-height:1;margin:.5rem 0 .2rem;color:var(--gold-deep)}
+.dmg .c.best .big{color:oklch(0.45 0.16 145)}
+.dmg .c .pct{font-style:italic;color:var(--ink-soft);font-size:.9rem}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;line-height:1.7;
+  background:var(--iron);color:oklch(0.9 0.03 150);border-radius:12px;padding:1.1rem 1.3rem;overflow-x:auto;
+  border:1px solid var(--iron-3)}
+.formula .k{color:var(--gold-bright)} .formula .n{color:oklch(0.78 0.13 145)}
+.tldr{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:1rem;font-family:"Cinzel";font-weight:600}
+.tldr .pill{padding:.3rem .7rem;border-radius:999px;border:1px solid var(--parch-edge);background:#fff7}
+.tldr .pill.let{color:var(--cav)} .tldr .pill.atk{color:var(--ember)}
+.tldr .op{color:var(--ink-faint)}
+.credit{margin-top:1.4rem;font-size:.82rem;color:var(--ink-faint)}
+.credit a{color:var(--gold-deep)}
+
 /* ============ §3 THE RULE (dark drama) ============ */
 .rule-band{position:relative;color:var(--parch);overflow:hidden;isolation:isolate;
   background:
@@ -703,67 +723,58 @@ body > .skiptranslate{display:none !important}
   </div>
 </section>
 
-<!-- ============ §6 TROOPS ============ -->
-<section class="sheet band" id="troops">
+<!-- ============ §6 THE MATH ============ -->
+<section class="sheet band" id="math">
   <div class="wrap">
-    <div class="eyebrow" data-rv>Chapter V</div>
+    <div class="eyebrow" data-rv>Chapter VI</div>
     <div class="chapter" data-rv>
-      <span class="no">05</span>
-      <h2>One forge order per troop</h2>
-      <p class="sub">Each troop type leans on different stats - so each has a different piece to upgrade first, and a reason why.</p>
+      <span class="no">06</span>
+      <h2>Different heroes hit harder</h2>
+      <p class="sub">Same joiners add up. Different joiners multiply. Mixing stat families is free damage.</p>
     </div>
 
-    <!-- Infantry -->
-    <div class="troop t-inf" data-rv>
-      <div class="art">
-        <span class="halo" style="background:radial-gradient(circle,var(--inf),transparent 65%)"></span>
-        <span class="badge">Infantry</span>
-        <img src="assets/troop-infantry.png" alt="Infantry hero with gear slots">
+    <div class="dmg">
+      <div class="c" data-rv>
+        <div class="mix">4 identical heroes<br><small>(e.g. 4× Amane)</small></div>
+        <div class="big">2.0×</div>
+        <div class="pct">+100% boost · additive</div>
       </div>
-      <div>
-        <div class="rune">Frontliners</div>
-        <h3>They soak the hits.</h3>
-        <div class="scales"><span>Defense</span><span>Health</span></div>
-        <div class="start"><span class="pin">Start here</span> Gloves → then Chestplate</div>
-        <p>Push <strong>gloves</strong> to +100/10 first, then move to the chestplate. Imbuing gloves first hands you a <strong>20% defensive bonus</strong> - too good to skip.</p>
-        <p>Bring <strong>helmet and boots</strong> along at roughly a <strong>25% ratio</strong> beside your gloves and chestplate.</p>
+      <div class="c" data-rv class="d1">
+        <div class="mix">2 Amane + 2 Chenko</div>
+        <div class="big">2.25×</div>
+        <div class="pct">+125% boost · two families</div>
       </div>
-    </div>
-
-    <!-- Archer -->
-    <div class="troop t-arc flip" data-rv>
-      <div class="art">
-        <span class="halo" style="background:radial-gradient(circle,var(--arc),transparent 65%)"></span>
-        <span class="badge">Archer</span>
-        <img src="assets/troop-archer.png" alt="Archer hero with gear slots">
-      </div>
-      <div>
-        <div class="rune">Damage dealers</div>
-        <h3>They do the killing.</h3>
-        <div class="scales"><span>Attack</span><span>Lethality</span></div>
-        <div class="start"><span class="pin">Start here</span> Helmet → then Boots</div>
-        <p>Take the <strong>helmet</strong> to +100/10 first, then the boots. Imbuing the helmet first grants a <strong>20% attack bonus</strong>.</p>
-        <p>Run <strong>chestplate and gloves</strong> at about a <strong>25% ratio</strong> alongside the helmet and boots.</p>
+      <div class="c best" data-rv class="d2">
+        <div class="mix">1 Chenko + 1 Amane + 1 Margot + 1 Yeonwoo</div>
+        <div class="big">2.5×</div>
+        <div class="pct">+150% boost · fully mixed</div>
       </div>
     </div>
 
-    <!-- Cavalry -->
-    <div class="troop t-cav" data-rv>
-      <div class="art">
-        <span class="halo" style="background:radial-gradient(circle,var(--cav),transparent 65%)"></span>
-        <span class="badge">Cavalry</span>
-        <img src="assets/troop-cavalry.png" alt="Cavalry hero with gear slots">
+    <p class="lead" data-rv>That's a <strong>12.5% relative increase</strong> just from mixing instead of stacking one hero. Here's why:</p>
+
+    <div class="split" style="align-items:center;margin-top:1rem">
+      <div data-rv>
+        <div class="formula">
+<span class="k">damageUp</span> = math.prod(1 + v/100 for v in DamageUp.values())<br><br>
+same op  → {102: <span class="n">100</span>}        → 1 + 100/100 = <span class="n">2.0</span><br>
+two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} → 1.5 × 1.5 = <span class="n">2.25</span>
+        </div>
       </div>
-      <div>
-        <div class="rune">Equalizers</div>
-        <h3>Flexible - lean to damage.</h3>
-        <div class="scales"><span>Lethality</span><span>Health</span></div>
-        <div class="start"><span class="pin">Start here</span> Helmet → then choose</div>
-        <p>Helmet to +100/10 first. After that you pick a build:</p>
-        <p><strong>Balanced</strong> → Chestplate + Boots. &nbsp;·&nbsp; <strong>Attack / Lethality</strong> → Helmet + Boots.</p>
-        <p class="note">Cavalry bend either way, but I'd lean <strong>damage</strong> if you want stronger results in Bear Hunt and Viking Vengeance.</p>
+      <div data-rv class="d1">
+        <p class="note">Each unique <strong>effect_op</strong> is multiplied separately. Same op? The buffs just add. Different ops? They compound. Basically: join with a different hero, get more damage.</p>
+        <div class="tldr">
+          <span class="pill let">Lethality</span><span class="op">+</span><span class="pill let">Lethality</span>
+          <span class="op">// additive</span>
+        </div>
+        <div class="tldr">
+          <span class="pill let">Lethality</span><span class="op">×</span><span class="pill atk">Attack</span>
+          <span class="op">// multiplicative</span>
+        </div>
+        <p class="note" style="margin-top:.9rem">If a rally is <strong>only</strong> lethality or <strong>only</strong> attack, you do less. Add Amane or Margot when you see only Chenko & Yeonwoo, and vice versa (up to 4 heroes).</p>
       </div>
     </div>
+    <p class="credit" data-rv>Damage math credit: <strong>Daryl</strong> from <a href="https://kingshotguides.com">Kingshotguides.com</a>.</p>
   </div>
 </section>
 
