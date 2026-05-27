@@ -4,34 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://www.gstatic.com https://fonts.gstatic.com https://translate.googleapis.com https://translate.google.com https://www.google.com; style-src 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com https://translate.googleapis.com; script-src 'self' 'unsafe-inline' https://translate.googleapis.com https://translate.google.com https://translate-pa.googleapis.com https://www.gstatic.com; font-src https://fonts.gstatic.com; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com https://translate.google.com; frame-src 'self' https://translate.google.com; object-src 'none'; base-uri 'self'; form-action 'none';">
-<title>How to Gear - A Kingshot Forging Codex</title>
-<meta name="description" content="A complete Kingshot gearing guide: forging priority, imbuement, the 3-gear-set rule, troop priorities, governor gear and charms. Scribed by Summer, [ABG], Kingdom 356.">
+<title>How 2 Bear Hunt - A Kingshot Rally Codex</title>
+<meta name="description" content="A complete Kingshot Bear Hunt guide: how to join rallies, the only skill that counts, hero picks, the avoid tier, the multiplicative damage math, rally balancing and troop formations. Scribed by Summer, [ABG], Kingdom 356.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* parchment codex */
-  --parch:      oklch(0.945 0.022 80);
-  --parch-2:    oklch(0.905 0.030 76);
-  --parch-edge: oklch(0.83 0.038 70);
-  --ink:        oklch(0.265 0.020 52);
-  --ink-soft:   oklch(0.44 0.022 56);
-  --ink-faint:  oklch(0.58 0.020 60);
-  /* metals & fire */
-  --gold:       oklch(0.74 0.130 73);
-  --gold-deep:  oklch(0.565 0.115 62);
-  --gold-bright:oklch(0.85 0.125 84);
-  --ember:      oklch(0.515 0.200 32);
-  --ember-br:   oklch(0.625 0.215 38);
-  --iron:       oklch(0.185 0.020 55);
-  --iron-2:     oklch(0.245 0.022 56);
-  --iron-3:     oklch(0.315 0.022 58);
-  --royal:      oklch(0.52 0.125 255);
-  /* troop runes */
-  --inf:        oklch(0.56 0.115 236);   /* infantry - steel (defense) */
-  --arc:        oklch(0.585 0.150 150);  /* archer - verdant gold (attack) */
-  --cav:        oklch(0.565 0.165 312);  /* cavalry - violet (lethality) */
+  /* hunt parchment - bone/ivory sheets on a forest night */
+  --parch:      oklch(0.945 0.018 95);   /* bone */
+  --parch-2:    oklch(0.905 0.022 96);
+  --parch-edge: oklch(0.83 0.028 96);
+  --ink:        oklch(0.255 0.018 150);
+  --ink-soft:   oklch(0.43 0.020 150);
+  --ink-faint:  oklch(0.57 0.018 150);
+  /* metals & blood */
+  --gold:       oklch(0.70 0.090 75);    /* antler bronze (reuses --gold name) */
+  --gold-deep:  oklch(0.54 0.080 62);
+  --gold-bright:oklch(0.82 0.085 82);
+  --ember:      oklch(0.505 0.205 25);   /* blood crimson */
+  --ember-br:   oklch(0.60 0.220 28);
+  --iron:       oklch(0.165 0.028 155);  /* forest night */
+  --iron-2:     oklch(0.225 0.032 158);
+  --iron-3:     oklch(0.300 0.034 160);
+  --royal:      oklch(0.52 0.120 200);
+  /* troop runes - archer leads (does most dmg) */
+  --inf:        oklch(0.55 0.030 150);   /* infantry - muted (little dmg) */
+  --arc:        oklch(0.62 0.165 145);   /* archer - vivid green (top dmg) */
+  --cav:        oklch(0.60 0.150 60);    /* cavalry - bronze-amber (2nd) */
   /* rarity tiers */
   --t-grey:   oklch(0.62 0.012 250);
   --t-green:  oklch(0.60 0.150 148);
@@ -468,6 +468,10 @@ body > .skiptranslate{display:none !important}
 .lang-opt .flag{font-size:1.15rem;line-height:1}
 .lang-opt .name{flex:1}
 
+/* ============ claw divider ============ */
+.claw{display:block;height:18px;margin:.4rem 0 0;opacity:.5;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='18'%3E%3Cg fill='none' stroke='%23a06a2c' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M14 2 C20 7 22 12 20 16'/%3E%3Cpath d='M34 1 C41 7 43 12 40 16'/%3E%3Cpath d='M54 1 C61 7 63 12 60 16'/%3E%3Cpath d='M74 1 C81 7 83 12 80 16'/%3E%3C/g%3E%3C/svg%3E")}
+
 /* ============ reveal animation ============ */
 [data-rv]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease), transform .8s var(--ease)}
 [data-rv].in{opacity:1;transform:none}
@@ -499,15 +503,16 @@ body > .skiptranslate{display:none !important}
 
 <header id="bar">
   <img class="crest" src="assets/logo-kingshot.png" alt="Kingshot">
-  <span class="btitle">How to Gear</span>
+  <span class="btitle">How 2 Bear Hunt</span>
   <nav>
-    <a href="#path">Path</a>
-    <a href="#fundamentals">Forging</a>
-    <a href="#rule">The Rule</a>
-    <a href="#stats">Stats</a>
-    <a href="#troops">Troops</a>
-    <a href="#governor">Governor</a>
-    <a href="#charms">Charms</a>
+    <a href="#join">Join</a>
+    <a href="#skill">The Skill</a>
+    <a href="#skip">Skips</a>
+    <a href="#heroes">Heroes</a>
+    <a href="#avoid">Tier List</a>
+    <a href="#math">The Math</a>
+    <a href="#balance">Balance</a>
+    <a href="#formations">Formations</a>
   </nav>
 </header>
 
