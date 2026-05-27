@@ -293,6 +293,17 @@ figure.shot figcaption{font-family:"Cinzel";font-size:.78rem;letter-spacing:.04e
   padding-bottom:.7rem;display:block}
 .hcard.let .st{color:var(--cav)} .hcard.atk .st{color:var(--ember)}
 
+/* avoid list */
+.avoid{display:grid;gap:.9rem;margin-top:.4rem}
+.avoid .a{padding:1rem 1.2rem;border-radius:12px;background:#fff7;border:1px solid var(--parch-edge);
+  border-left:4px solid var(--ember)}
+.avoid .a .t{font-family:"Cinzel";font-weight:700;letter-spacing:.04em;color:var(--ember);display:flex;
+  justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.avoid .a .who{font-weight:700;color:var(--ink)}
+.avoid .a p{color:var(--ink-soft);font-size:.95rem;margin-top:.3rem}
+.thrud{margin-top:1.4rem;border-left-color:var(--arc)}
+.thrud .t{color:oklch(0.45 0.15 145)}
+
 /* ============ §3 THE RULE (dark drama) ============ */
 .rule-band{position:relative;color:var(--parch);overflow:hidden;isolation:isolate;
   background:
@@ -665,32 +676,29 @@ body > .skiptranslate{display:none !important}
   </div>
 </section>
 
-<!-- ============ §5 GEAR STATS ============ -->
-<section class="sheet alt band" id="stats">
+<!-- ============ §5 TIER LIST & AVOID ============ -->
+<section class="sheet alt band" id="avoid">
   <div class="wrap">
-    <div class="eyebrow" data-rv>Chapter IV</div>
+    <div class="eyebrow" data-rv>Chapter V</div>
     <div class="chapter" data-rv>
-      <span class="no">04</span>
-      <h2>Which piece gives which stat</h2>
-      <p class="sub">Every piece carries two stat lines - one for Conquest, one for Expedition. Know which is which before you commit hammers.</p>
+      <span class="no">05</span>
+      <h2>The tier list, and who to avoid</h2>
+      <p class="sub">These heroes either roll the dice, or do nothing at all. Keep them out of real rallies.</p>
     </div>
-
-    <div class="realm" data-rv style="margin-top:0;margin-bottom:1.6rem">
-      <div class="rc cq"><b>Conquest stats</b> - your numbers in <strong>Conquest &amp; Arena</strong>.</div>
-      <div class="rc ex"><b>Expedition stats</b> - your numbers in <strong>PvP and everything else</strong>.</div>
+    <figure data-rv class="shot" style="margin-bottom:1.8rem">
+      <img src="assets/tier-list.png" alt="Bear Hunt joiner hero tier list">
+      <figcaption>Bear Hunt joiner tier list.</figcaption>
+    </figure>
+    <div class="avoid">
+      <div class="a" data-rv><div class="t"><span class="who">Rosa, Marlin, Petra, Jaeger, Jabel</span><span>Chance-based</span></div><p>Damage <strong>does not stack</strong> and output is <strong>randomly generated</strong>.</p></div>
+      <div class="a" data-rv><div class="t"><span class="who">Zoe, Saul, Alcar, Eric</span><span>No damage</span></div><p>They only have a defensive skill - they don't increase damage at all.</p></div>
+      <div class="a" data-rv><div class="t"><span class="who">Any blue (R) heroes</span><span>Gathering only</span></div><p>Their skills only help gather resources. Nothing for a rally.</p></div>
+      <div class="a" data-rv><div class="t"><span class="who">Diana</span><span>Niche</span></div><p>Only useful against rallying terrors - not Bear Hunt.</p></div>
+      <div class="a" data-rv><div class="t"><span class="who">Quinn, Howard, Gordon, Fahd</span><span>Defensive only</span></div><p>Defensive skill only - no rally damage.</p></div>
     </div>
-
-    <div class="matrix">
-      <div class="mcell" data-rv>
-        <div class="pieces">Helmet &nbsp;+&nbsp; Boots</div>
-        <div class="stat"><span class="k">Conquest</span><span class="v atk">Attack</span></div>
-        <div class="stat"><span class="k">Expedition</span><span class="v let">Lethality</span></div>
-      </div>
-      <div class="mcell" data-rv class="d1">
-        <div class="pieces">Chestplate &nbsp;+&nbsp; Gloves</div>
-        <div class="stat"><span class="k">Conquest</span><span class="v def">Defense</span></div>
-        <div class="stat"><span class="k">Expedition</span><span class="v hp">Health</span></div>
-      </div>
+    <div class="a thrud" data-rv>
+      <div class="t"><span class="who">Exception: Thrud</span><span>Archer rallies</span></div>
+      <p>Thrud sits in the avoid tier, but she's great for <strong>archer-heavy rallies</strong> - she boosts all archer damage. Everyone else in the avoid tier: genuinely avoid.</p>
     </div>
   </div>
 </section>
