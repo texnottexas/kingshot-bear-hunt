@@ -281,6 +281,18 @@ figure.shot figcaption{font-family:"Cinzel";font-size:.78rem;letter-spacing:.04e
 @media(max-width:520px){.gallery{grid-template-columns:1fr}}
 .gallery figure.shot{margin:0}
 
+/* hero-card grid */
+.heroes{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:.6rem}
+@media(max-width:760px){.heroes{grid-template-columns:1fr 1fr}}
+.hcard{border-radius:14px;overflow:hidden;border:1px solid var(--parch-edge);background:#fff7;
+  text-align:center;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.hcard:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 14px 28px -18px oklch(0.5 0.1 60 / .7)}
+.hcard img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--parch-2)}
+.hcard .nm{font-family:"Cinzel";font-weight:700;font-size:1.02rem;margin:.55rem 0 .1rem}
+.hcard .st{font-family:"Cinzel";font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  padding-bottom:.7rem;display:block}
+.hcard.let .st{color:var(--cav)} .hcard.atk .st{color:var(--ember)}
+
 /* ============ §3 THE RULE (dark drama) ============ */
 .rule-band{position:relative;color:var(--parch);overflow:hidden;isolation:isolate;
   background:
@@ -634,34 +646,22 @@ body > .skiptranslate{display:none !important}
   </div>
 </section>
 
-<!-- ============ §4 REFORGING ============ -->
-<section class="sheet band" id="reforge">
+<!-- ============ §4 HEROES ============ -->
+<section class="sheet band" id="heroes">
   <div class="wrap">
-    <div class="eyebrow" data-rv>Chapter III</div>
+    <div class="eyebrow" data-rv>Chapter IV</div>
     <div class="chapter" data-rv>
-      <span class="no">03</span>
-      <h2>Already spread thin? Reforge.</h2>
-      <p class="sub">Poured hammers and XP into the wrong sets? It's recoverable - and cheaper than you'd fear.</p>
+      <span class="no">04</span>
+      <h2>Who to join with</h2>
+      <p class="sub">Four heroes, two stat families. Bring these and nothing else.</p>
     </div>
-    <div class="split" style="align-items:center">
-      <div data-rv>
-        <p class="lead">Unequip the piece, hit <strong>Reforge</strong>, and reclaim your investment:</p>
-        <div class="fuel" style="margin-top:1.2rem">
-          <span class="chip gr" style="font-size:.95rem;padding:.55rem 1rem">XP refunded <b>100%</b></span>
-          <span class="chip" style="background:linear-gradient(var(--ember-br),var(--ember));font-size:.95rem;padding:.55rem 1rem">Hammers refunded <b>50%</b></span>
-        </div>
-        <p class="note" style="margin-top:1.2rem">XP comes back free, so don't agonize over it. Hammers cost you half - annoying, not fatal.</p>
-      </div>
-      <div data-rv class="d1">
-        <div class="panel">
-          <ol style="list-style:none;display:grid;gap:.9rem;counter-reset:s">
-            <li style="display:flex;gap:.9rem;align-items:flex-start"><span class="cz" style="color:var(--gold-deep);font-size:1.3rem;font-weight:800">1</span><span>Unequip the “extra” gear you no longer want to feed.</span></li>
-            <li style="display:flex;gap:.9rem;align-items:flex-start"><span class="cz" style="color:var(--gold-deep);font-size:1.3rem;font-weight:800">2</span><span>Click <strong>Reforge</strong> to pull the XP and hammers back out.</span></li>
-            <li style="display:flex;gap:.9rem;align-items:flex-start"><span class="cz" style="color:var(--gold-deep);font-size:1.3rem;font-weight:800">3</span><span>Pour the reclaimed XP and hammers into the <strong>three sets</strong> of your leading rally formation.</span></li>
-          </ol>
-        </div>
-      </div>
+    <div class="heroes">
+      <div class="hcard let" data-rv><img src="assets/portrait-yeonwoo.png" alt="Yeonwoo"><div class="nm">Yeonwoo</div><span class="st">Lethality</span></div>
+      <div class="hcard let" data-rv class="d1"><img src="assets/portrait-chenko.png" alt="Chenko"><div class="nm">Chenko</div><span class="st">Lethality</span></div>
+      <div class="hcard atk" data-rv class="d2"><img src="assets/portrait-margot.png" alt="Margot"><div class="nm">Margot</div><span class="st">Attack</span></div>
+      <div class="hcard atk" data-rv class="d3"><img src="assets/portrait-amane.png" alt="Amane"><div class="nm">Amane</div><span class="st">Attack</span></div>
     </div>
+    <p class="note" data-rv style="margin-top:1.2rem;font-style:italic">If you join my rally with any other hero, please just uninstall the game lol.</p>
   </div>
 </section>
 
