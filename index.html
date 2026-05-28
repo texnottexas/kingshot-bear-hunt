@@ -17,7 +17,7 @@
   --parch-edge: oklch(0.83 0.028 96);
   --ink:        oklch(0.255 0.018 150);
   --ink-soft:   oklch(0.43 0.020 150);
-  --ink-faint:  oklch(0.57 0.018 150);
+  --ink-faint:  oklch(0.50 0.018 150);
   /* metals & blood */
   --gold:       oklch(0.70 0.090 75);    /* antler bronze (reuses --gold name) */
   --gold-deep:  oklch(0.54 0.080 62);
@@ -554,7 +554,7 @@ body > .skiptranslate{display:none !important}
 <div id="progress"></div>
 
 <!-- language switcher (drives hidden Google Translate) -->
-<button class="lang-fab notranslate" id="langFab" aria-haspopup="dialog" aria-label="Change language">
+<button class="lang-fab notranslate" id="langFab" aria-haspopup="dialog" aria-expanded="false" aria-label="Change language">
   <span class="flag" id="langFlag">🇺🇸</span><span class="code" id="langCode">EN</span>
 </button>
 <div class="lang-overlay" id="langOverlay" role="dialog" aria-modal="true" aria-label="Select language">
@@ -568,10 +568,10 @@ body > .skiptranslate{display:none !important}
 </div>
 <div id="google_translate_element" aria-hidden="true"></div>
 
-<header id="bar">
+<header id="bar" aria-label="Chapter navigation">
   <img class="crest" src="assets/logo-kingshot.png" alt="Kingshot">
   <span class="btitle">How 2 Bear Hunt</span>
-  <nav>
+  <nav aria-label="Chapters">
     <a href="#join">Join</a>
     <a href="#skill">The Skill</a>
     <a href="#skip">Skips</a>
@@ -591,19 +591,19 @@ body > .skiptranslate{display:none !important}
         <img src="assets/logo-kingshot.png" alt="Kingshot logo">
         <span>Bear Hunt Codex</span>
       </div>
-      <h1 data-rv class="d1"><span class="small">How 2</span><span class="word">Bear Hunt</span></h1>
+      <h1 class="d1" data-rv><span class="small">How 2</span><span class="word">Bear Hunt</span></h1>
       <p class="blurb" data-rv style="--d:2">Joining right is most of your rally damage. Who to bring, the one skill that counts, and the math that makes a rally <em>hit</em>.</p>
       <div class="byline" data-rv style="--d:3">
-        <span class="seal">S</span>
+        <span class="seal" aria-hidden="true">S</span>
         <div>Scribed by <b>Summer</b> · Alliance <b>[ABG]</b> · Kingdom&nbsp;356</div>
       </div>
     </div>
-    <div class="hero-art" data-rv class="d2">
+    <div class="hero-art d2" data-rv>
       <span class="glow"></span>
       <img src="assets/hero-render.png" alt="A flexing Bear Hunt rally hero standing over fallen knights">
     </div>
   </div>
-  <div class="scrollcue"><span>Read</span><span class="ln"></span></div>
+  <div class="scrollcue" aria-hidden="true"><span>Read</span><span class="ln"></span></div>
 </section>
 
 <!-- ============ §1 JOIN A RALLY ============ -->
@@ -628,7 +628,7 @@ body > .skiptranslate{display:none !important}
           </div>
         </div>
       </div>
-      <div data-rv class="d1">
+      <div class="d1" data-rv>
         <div class="panel foil">
           <p style="margin:0"><strong>More archers = more damage.</strong> Make sure <em>every single march</em> you send into a Bear Hunt has archers in it. The why is in <a href="#formations">Formations</a>.</p>
         </div>
@@ -660,7 +660,7 @@ body > .skiptranslate{display:none !important}
           </div>
         </div>
       </div>
-      <figure data-rv class="d1 shot">
+      <figure class="d1 shot" data-rv>
         <img src="assets/shot-expedition-skill.png" alt="A joiner hero card with the top-right Expedition skill circled">
         <figcaption>The circled skill - top-right, Expedition - is the only one that counts.</figcaption>
       </figure>
@@ -677,13 +677,13 @@ body > .skiptranslate{display:none !important}
 
     <div class="reasons">
       <div class="r" data-rv><h4>Higher level skips lower</h4><p>A <strong>Lv5</strong> joiner skill skips Lv1, 2, 3 and 4. If your skill level is lower than the other joiners, <strong>it gets skipped</strong> - even with more stars.</p></div>
-      <div class="r" data-rv class="d1"><h4>XP = troop capacity</h4><p>Always join with your <strong>highest XP-level</strong> hero. More XP means more troops, and <strong>more troops = more points</strong>.</p></div>
-      <div class="r" data-rv class="d2"><h4>Stars are irrelevant</h4><p><strong>Star level does not affect troop capacity.</strong> Don't pick a joiner by stars.</p></div>
+      <div class="r d1" data-rv><h4>XP = troop capacity</h4><p>Always join with your <strong>highest XP-level</strong> hero. More XP means more troops, and <strong>more troops = more points</strong>.</p></div>
+      <div class="r d2" data-rv><h4>Stars are irrelevant</h4><p><strong>Star level does not affect troop capacity.</strong> Don't pick a joiner by stars.</p></div>
     </div>
 
     <div class="sets" style="margin-top:2rem">
       <div class="setcard arc" data-rv><div class="lab">Skip ladder</div><span class="one">Lv5 → skips 1-4</span><p>Bring a low-skill hero on purpose only if you want its skill skipped.</p></div>
-      <div class="setcard cav" data-rv class="d1"><div class="lab">Example · Jaeger</div><span class="one">Lv3 skill</span><p>Usually don't join with Jaeger. But you <em>can</em> purely for capacity - his Lv3 skill is skipped by any Lv4+.</p></div>
+      <div class="setcard cav d1" data-rv><div class="lab">Example · Jaeger</div><span class="one">Lv3 skill</span><p>Usually don't join with Jaeger. But you <em>can</em> purely for capacity - his Lv3 skill is skipped by any Lv4+.</p></div>
     </div>
   </div>
 </section>
@@ -699,9 +699,9 @@ body > .skiptranslate{display:none !important}
     </div>
     <div class="heroes">
       <div class="hcard let" data-rv><img src="assets/portrait-yeonwoo.png" alt="Yeonwoo"><div class="nm">Yeonwoo</div><span class="st">Lethality</span></div>
-      <div class="hcard let" data-rv class="d1"><img src="assets/portrait-chenko.png" alt="Chenko"><div class="nm">Chenko</div><span class="st">Lethality</span></div>
-      <div class="hcard atk" data-rv class="d2"><img src="assets/portrait-margot.png" alt="Margot"><div class="nm">Margot</div><span class="st">Attack</span></div>
-      <div class="hcard atk" data-rv class="d3"><img src="assets/portrait-amane.png" alt="Amane"><div class="nm">Amane</div><span class="st">Attack</span></div>
+      <div class="hcard let d1" data-rv><img src="assets/portrait-chenko.png" alt="Chenko"><div class="nm">Chenko</div><span class="st">Lethality</span></div>
+      <div class="hcard atk d2" data-rv><img src="assets/portrait-margot.png" alt="Margot"><div class="nm">Margot</div><span class="st">Attack</span></div>
+      <div class="hcard atk d3" data-rv><img src="assets/portrait-amane.png" alt="Amane"><div class="nm">Amane</div><span class="st">Attack</span></div>
     </div>
     <p class="note" data-rv style="margin-top:1.2rem;font-style:italic">If you join my rally with any other hero, please just uninstall the game lol.</p>
   </div>
@@ -716,8 +716,8 @@ body > .skiptranslate{display:none !important}
       <h2>The tier list, and who to avoid</h2>
       <p class="sub">These heroes either roll the dice, or do nothing at all. Keep them out of real rallies.</p>
     </div>
-    <figure data-rv class="shot" style="margin-bottom:1.8rem">
-      <img src="assets/tier-list.png" alt="Bear Hunt joiner hero tier list">
+    <figure class="shot" data-rv style="margin-bottom:1.8rem">
+      <img src="assets/tier-list.png" alt="Bear Hunt joiner tier list - top tier Yeonwoo, Chenko, Margot, Amane; lower and avoid tiers below. The avoid heroes are listed in full beneath this image.">
       <figcaption>Bear Hunt joiner tier list.</figcaption>
     </figure>
     <div class="avoid">
@@ -750,12 +750,12 @@ body > .skiptranslate{display:none !important}
         <div class="big">2.0×</div>
         <div class="pct">+100% boost · additive</div>
       </div>
-      <div class="c" data-rv class="d1">
+      <div class="c d1" data-rv>
         <div class="mix">2 Amane + 2 Chenko</div>
         <div class="big">2.25×</div>
         <div class="pct">+125% boost · two families</div>
       </div>
-      <div class="c best" data-rv class="d2">
+      <div class="c best d2" data-rv>
         <div class="mix">1 Chenko + 1 Amane + 1 Margot + 1 Yeonwoo</div>
         <div class="big">2.5×</div>
         <div class="pct">+150% boost · fully mixed</div>
@@ -772,7 +772,7 @@ same op  → {102: <span class="n">100</span>}        → 1 + 100/100 = <span cl
 two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} → 1.5 × 1.5 = <span class="n">2.25</span>
         </div>
       </div>
-      <div data-rv class="d1">
+      <div class="d1" data-rv>
         <p class="note">Each unique <strong>effect_op</strong> is multiplied separately. Same op? The buffs just add. Different ops? They compound. Basically: join with a different hero, get more damage.</p>
         <div class="tldr">
           <span class="pill let">Lethality</span><span class="op">+</span><span class="pill let">Lethality</span>
@@ -807,7 +807,7 @@ two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} �
           </div>
         </div>
       </div>
-      <div data-rv class="d1">
+      <div class="d1" data-rv>
         <div class="spend">
           <div class="who whale">
             <div class="t">If you're a rally leader</div>
@@ -834,9 +834,9 @@ two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} �
     </div>
 
     <div class="tp" data-rv>
-      <div class="row arc"><span class="lbl">Archer</span><span class="bar"><i></i></span><span class="v">Most damage</span></div>
-      <div class="row cav"><span class="lbl">Cavalry</span><span class="bar"><i></i></span><span class="v">2nd most</span></div>
-      <div class="row inf"><span class="lbl">Infantry</span><span class="bar"><i></i></span><span class="v">Little to none</span></div>
+      <div class="row arc"><span class="lbl">Archer</span><span class="bar" aria-hidden="true"><i></i></span><span class="v">Most damage</span></div>
+      <div class="row cav"><span class="lbl">Cavalry</span><span class="bar" aria-hidden="true"><i></i></span><span class="v">2nd most</span></div>
+      <div class="row inf"><span class="lbl">Infantry</span><span class="bar" aria-hidden="true"><i></i></span><span class="v">Little to none</span></div>
     </div>
 
     <div class="split" style="align-items:start;margin-top:1.4rem">
@@ -845,7 +845,7 @@ two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} �
           <p style="margin:0"><strong>Every formation needs a different hero in the 2nd and 3rd slot.</strong> If you repeat a hero across formations, deploying one will leave another short a hero.</p>
         </div>
       </div>
-      <div data-rv class="d1">
+      <div class="d1" data-rv>
         <div class="spend">
           <div class="who f2p">
             <div class="t">Fewer troops</div>
@@ -880,14 +880,14 @@ two ops  → {101: <span class="n">50</span>, 102: <span class="n">50</span>} �
     <div class="word" data-rv>FIN</div>
     <p class="sincerely" data-rv>Sincerely,</p>
     <p class="who" data-rv>your severely parched mother</p>
-    <div class="card" data-rv class="d1">
+    <div class="card d1" data-rv>
       <img src="assets/profile-summer.png" alt="[ABG]Summer - Alliance ABG, Kingdom 356">
     </div>
-    <p class="meta" data-rv class="d2">
+    <p class="meta d2" data-rv>
       [ABG]Summer · Kingdom #356 · damage math by Daryl, <a href="https://kingshotguides.com">Kingshotguides.com</a><br>
       More from this series → <a href="https://texnottexas.github.io/kingshot-gear-guide/">How to Gear</a>
     </p>
-    <a class="totop" href="#top" data-rv class="d2">↑ Back to the top</a>
+    <a class="totop d2" href="#top" data-rv>↑ Back to the top</a>
   </div>
 </footer>
 
@@ -991,8 +991,26 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
   }
   window.applyToCombo = applyToCombo;
 
-  function openModal(){ overlay.classList.add('active'); }
-  function closeModal(){ overlay.classList.remove('active'); }
+  function setBgInert(on){
+    var kids = document.body.children;
+    for (var i=0;i<kids.length;i++){
+      if (kids[i].id === 'langOverlay') continue;
+      if (on) kids[i].setAttribute('inert',''); else kids[i].removeAttribute('inert');
+    }
+  }
+  function openModal(){
+    overlay.classList.add('active');
+    fab.setAttribute('aria-expanded','true');
+    setBgInert(true);
+    var first = grid.querySelector('.lang-opt') || document.getElementById('langClose');
+    if (first) first.focus();
+  }
+  function closeModal(){
+    overlay.classList.remove('active');
+    fab.setAttribute('aria-expanded','false');
+    setBgInert(false);
+    fab.focus();
+  }
   function restoreEnglish(){
     try { sessionStorage.removeItem('pendingLang'); } catch(e){}
     document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax';
@@ -1020,6 +1038,14 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
   fab.addEventListener('click', openModal);
   document.getElementById('langClose').addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+  overlay.addEventListener('keydown', function(e){
+    if (e.key !== 'Tab') return;
+    var f = [].slice.call(overlay.querySelectorAll('button')).filter(function(b){ return !b.disabled && b.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
   });
